@@ -1,7 +1,7 @@
 {
   "name": "br.com.optiapps.line_it_medico",
-  "version": "1.0.10",
-  "displayName": "Consultas Organizadas",
+  "version": "1.0.11",
+  "displayName": "Consultas Line-it",
   "cordova": {
     "platforms": [],
     "plugins": {
