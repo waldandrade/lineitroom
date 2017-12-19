@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+
+<head>
+  <meta charset="utf-8">
+  <title>Consultas organizadas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="mdc-typography demo-body">
+
+  <div id="app">
+
+    <div class="main-content">
+      <menu-vertical id="menu_vertical" ref="menu-vertical"></menu-vertical>
+      <router-view class="mdc-toolbar-fixed-adjust router-view" ref="routerView"></router-view>
+      <rodape></rodape>
+    </div>
+
+    <!-- Snackbar -->
+    <div class="mdc-snackbar snackbar-msg" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+      <div class="mdc-snackbar__text"></div>
+      <div class="mdc-snackbar__action-wrapper">
+        <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+      </div>
+    </div>
+    <!-- end -->
+  </div>
+
+
+  <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style type="text/css">
+     :root {
+      --mdc-theme-primary: black;
+      --mdc-theme-accent: #2fc5f7;
+      --mdc-theme-background: white;
+      --mdc-theme-text-primary-on-primary: white;
+      --mdc-theme-text-icon-on-primary: white;
+      --mdc-theme-text-secondary-on-primary: white;
+      --mdc-theme-text-hint-on-primary: white;
+    }
+  </style>
+
+  <script type="text/javascript" src="cordova.js"></script>
+
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="node_modules/vue-router/dist/vue-router.js"></script>
+  <script src='node_modules/jquery/dist/jquery.js'></script>
+  <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+  <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script src="node_modules/lodash/lodash.js"></script>
+
+  <!-- Settings para o Dao e outras confs -->
+  <script type="text/javascript" src="js/settings/settings.js"></script>
+
+  <!-- CSS's -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="templates/system/subsystem/box_medico/box_medico.css">
+  <link rel="stylesheet" href="templates/system/activate/box_medico/activate_box_medico.css">
+  <link rel="stylesheet" href="templates/system/update_medico/update_medico.css">
+  <link rel="stylesheet" href="templates/menu/menu.css">
+  <link rel="stylesheet" href="templates/rodape/rodape.css">
+  <link rel="stylesheet" href="templates/sobre/sobre.css">
+  <link rel="stylesheet" href="templates/home/home.css">
+
+  <!-- JS + Componentes (HTML) -->
+  <script type="text/javascript" src="templates/system/activate/box_medico/activate_box_medico.js"></script>
+  <script type="text/javascript" src="templates/system/subsystem/box_medico/box_medico.js"></script>
+  <script type="text/javascript" src="templates/system/update_medico/update_medico.js"></script>
+  <script type="text/javascript" src="templates/menu/menu.js"></script>
+  <script type="text/javascript" src="templates/rodape/rodape.js"></script>
+  <script type="text/javascript" src="templates/sobre/sobre.js"></script>
+  <script type="text/javascript" src="templates/home/home.js"></script>
+
+  <!-- Dao's -->
+  <script type="text/javascript" src="js/daoclient/dao_box_medico.js"></script>
+  <script type="text/javascript" src="js/daoclient/dao_paciente.js"></script>
+  <script type="text/javascript" src="js/daoclient/dao_youtube.js"></script>
+  <script type="text/javascript" src="js/daoclient/dao_clinica.js"></script>
+
+  <!-- Roteador do vuejs -->
+  <script type="text/javascript" src="js/settings/router.js"></script>
+
+  <script>
+    window.mdc.autoInit( /* root */ document, () => {});
+  </script>
+</body>
+
+</html>

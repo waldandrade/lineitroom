@@ -1,0 +1,76 @@
+<div class="box-medico">
+	<div v-show="!fila_escolhida" class="mdc-layout-grid">
+		<div v-for="fila in list_filas" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+			<div class="mdc-card mdc-card-filas">
+				<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large">Sala: {{ fila.apelido }}</h1>
+
+					<div v-show="!fila.editar">
+						<h2 class="mdc-card__subtitle">Responsável: {{ fila.medico }}</h2>
+					</div>
+				</section>
+				<section class="mdc-card__actions mdc-card__actions--vertical" dir="rtl">
+					<button type="submit" class="mdc-button mdc-button--compact mdc-card__action dark-theme" v-on:click="escolher_fila(fila)">
+						Escolher
+					</button>
+				</section>
+			</div>
+		</div>
+		<div v-if="$root.io_connected && list_filas.length <= 0" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+			<h3 style="text-align: center;">Nenhuma sala disponível...</h3>
+		</div>
+		<div v-if="$root.io_failed" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+			<h3 style="text-align: center;">Não foi possível conectar-se à Central...</h3>
+		</div>
+	</div>
+
+	<div v-if="fila_escolhida" class="mdc-layout-grid">
+
+		<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+			<div class="mdc-card mdc-card-filas">
+				<section class="mdc-card__primary">
+					<div class="mdc-card__title" style="display: inline-flex; width: 100%;">
+						<h1 class="mdc-card__title--large" style="width: 100%;">Sala: {{ fila_escolhida.apelido }}</h1>
+						<div style="text-align: right;">
+							<i class="material-icons" style="margin-top: 10px;" @click="sair_da_sala()">exit_to_app</i>
+						</div>
+					</div>
+					<div v-show="!fila_escolhida.editar">
+						<h2 class="mdc-card__subtitle">Responsável: {{ fila_escolhida.medico }}</h2>
+					</div>
+				</section>
+				<section class="mdc-card__supporting-text container_por_sala">
+
+					<!-- Cards das senhas por sala -->
+					<div v-for="senha in list_senhas" v-show="senha.fila_sala == fila_escolhida.apelido" class="mdc-layout-grid">
+						<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+							<div class="mdc-card">
+								<button v-on:click="desistir_atender_senha(senha)" class="mdc-fab mdc-fab--mini mdc-ripple-upgraded close-button-card">
+					        <span class="mdc-fab__icon">
+									  <i class="material-icons">close</i>
+					        </span>
+					      </button>
+								<section class="mdc-card__primary">
+									<h1 class="mdc-card__title mdc-card__title--large">SENHA {{ senha.numero }}</h1>
+									<h2 class="mdc-card__subtitle">Paciente: {{ senha.paciente }}</h2>
+									<h2 v-if="senha.fila_escolhida == 'PRE'" class="mdc-card__subtitle" style="color: red;">Preferencial</h2>
+								</section>
+								<section class="mdc-card__actions" dir="rtl">
+									<button type="submit" class="mdc-button
+									mdc-button--raised
+									mdc-button--primary
+									mdc-ripple-surface" v-on:click="atender_senha(senha, fila_escolhida)">
+									Atender
+								</button>
+								</section>
+							</div>
+						</div>
+					</div>
+					<!-- Fim -->
+				</section>
+			</div>
+		</div>
+
+	</div>
+
+</div>

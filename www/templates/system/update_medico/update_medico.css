@@ -1,0 +1,14 @@
+.to-end-list {
+	margin-left: auto;
+}
+
+.list-border {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.limit-chars {
+	width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

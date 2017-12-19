@@ -1,0 +1,50 @@
+.box-medico {
+	height: calc(100% - 80px);
+	overflow-x: auto;
+}
+
+.box-medico .fila-ativa {
+	background-color: #DDDDDD;
+}
+
+.box-medico .mdc-card {
+	position: relative;
+}
+
+.box-medico .close-button-card {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	margin: 10px;
+	background-color: black;
+}
+
+.box-medico .button-add-fila {
+	display: block;
+}
+
+.box-medico .container-grid {
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: calc(100% - 80px);
+  display: inline-flex;
+}
+
+.box-medico .container-grid .container-card {
+	min-width: 305px;
+	margin: 10px 10px 10px 10px;
+}
+
+.box-medico .container-grid .mdc-card-filas {
+  max-height: 100%;
+	background-color: #f7f7f7;
+}
+
+.box-medico .container-grid .mdc-card-filas .container_por_sala {
+	overflow-y: scroll;
+	margin-bottom: 10px;
+}
+
+.box-medico .editar_fila {
+	cursor: pointer;
+}

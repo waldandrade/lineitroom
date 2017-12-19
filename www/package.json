@@ -1,0 +1,20 @@
+{
+  "name": "line_it_medico",
+  "version": "1.0.0",
+  "description": "I9Fila para gerenciamento de filas das salas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "material-components-web": "^0.12.1",
+    "socket.io-client": "^2.0.3",
+    "vue": "^2.3.4",
+    "vue-router": "^2.5.3"
+  },
+  "author": "OptiApps",
+  "license": "ISC",
+  "devDependencies": {}
+}

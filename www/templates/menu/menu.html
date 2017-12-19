@@ -1,0 +1,58 @@
+<div>
+  <div id="toolbar_phone" class="mdc-toolbar mdc-toolbar--fixed">
+    <div class="mdc-toolbar__row">
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+        <button class="demo-menu material-icons">menu</button>
+      </section>
+      <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
+        <i class="material-icons">wifi</i>&nbsp;&nbsp;
+        <i class="mdc-toolbar__icon"
+          :class="{'con-connected': $root.internet_connected,
+          'con-error': !$root.internet_connected}">
+        </i>&nbsp;&nbsp;
+        <i class="material-icons">share</i>&nbsp;&nbsp;
+        <i class="mdc-toolbar__icon"
+          :class="{'con-connected': $root.io_connected,
+          'con-disconnected': $root.io_disconnected,
+          'con-error': $root.io_failed}">
+        </i>
+      </section>
+    </div>
+  </div>
+
+  <aside class="mdc-temporary-drawer" style="--mdc-temporary-drawer-opacity:0;">
+    <nav id="nav_phone" class="mdc-temporary-drawer__drawer">
+      <header class="mdc-temporary-drawer__header">
+        <div class="mdc-temporary-drawer__header-content">
+          {{ nome_medico }}
+        </div>
+      </header>
+      <nav class="mdc-temporary-drawer__content mdc-list-group">
+        <div id="icon-with-text-demo" class="mdc-list">
+          <a class="mdc-list-item mdc-theme--primary" href="#" data-mdc-tabindex-handled="true" tabindex="-1" v-on:click="drawer.open = false">
+            <i class="material-icons mdc-list-item__start-detail mdc-theme--primary" aria-hidden="true">home</i>Início
+          </a>
+        </div>
+
+        <hr class="mdc-list-divider">
+
+        <div class="mdc-list">
+          <a class="mdc-list-item mdc-theme--primary" v-on:click="drawer.open = false; delete_cookies();" data-mdc-tabindex-handled="true" tabindex="-1">
+            <i class="material-icons mdc-list-item__start-detail mdc-theme--primary">exit_to_app</i>Escolher outra clínica
+          </a>
+          <a class="mdc-list-item mdc-theme--primary" href="#update-medico" v-on:click="drawer.open = false;" data-mdc-tabindex-handled="true" tabindex="-1">
+            <i class="material-icons mdc-list-item__start-detail mdc-theme--primary">account_circle</i>Alterar meu nome
+          </a>
+        </div>
+
+        <hr class="mdc-list-divider">
+
+        <div id="icon-with-text-demo" class="mdc-list">
+          <a class="mdc-list-item mdc-theme--primary" href="#sobre" data-mdc-tabindex-handled="true" tabindex="-1" v-on:click="drawer.open = false">
+            <i class="material-icons mdc-list-item__start-detail mdc-theme--primary" aria-hidden="true">copyright</i>Sobre
+          </a>
+        </div>
+      </nav>
+    </nav>
+  </aside>
+</div>

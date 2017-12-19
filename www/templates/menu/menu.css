@@ -1,0 +1,68 @@
+div #toolbar_phone {
+  background-color: white;
+}
+
+div #toolbar_phone * {
+  color: black;
+}
+
+.con-connected {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #7CFC00;
+}
+
+.con-disconnected {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #696969;
+}
+
+.con-error {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: yellow;
+}
+
+.hide_on_large {
+  display: none; /* This is how it looks on mobile */
+}
+
+.hide_on_small {
+	display: inline-flex;
+	z-index: 2;
+}
+
+.mdc-toolbar {
+  z-index: 3;
+}
+
+aside {
+  z-index: 4;
+}
+
+.mdc-toolbar a{
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .hide_on_large {
+        display: block;
+    }
+
+    .hide_on_small {
+		display: none;
+	}
+}
+
+.div-header-imagem {
+  background-image: url('../../img/bannerlineit.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: #fff;
+}

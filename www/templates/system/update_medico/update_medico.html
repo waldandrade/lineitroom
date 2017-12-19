@@ -1,0 +1,30 @@
+<div class="">
+
+	<div class="mdc-layout-grid">
+		<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2"></div>
+		<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+			<div class="mdc-card">
+
+				<section class="mdc-card__primary">
+					<h1 class="mdc-card__title mdc-card__title--large">Alterar meu nome Médico</h1>
+					<h2 class="mdc-card__subtitle">Formulário para alteração de nome Médico</h2>
+				</section>
+				<section class="mdc-card__supporting-text">
+					<div class="mdc-form-field">
+						<div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+							<input id="nome" type="text" class="mdc-textfield__input" v-model="nome">
+							<label for="nome" class="mdc-textfield__label">
+								Nome
+							</label>
+						</div>
+					</div>
+				</section>
+				<section class="mdc-card__actions mdc-card__actions--vertical" dir="rtl">
+					<button type="submit" class="mdc-button mdc-button--compact mdc-card__action dark-theme" v-on:click="update_nome($event)">
+						Alterar nome
+					</button>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

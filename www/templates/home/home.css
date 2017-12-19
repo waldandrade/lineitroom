@@ -1,0 +1,39 @@
+.home {
+  background-image: url("../../img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  min-height: 100%;
+}
+
+.home .container-lineit {
+  width: 100%;
+  text-align: center;
+}
+
+.home .container-lineit .lineit-logo {
+  width: 50%;
+  margin: 30px;
+}
+
+.home .conteudo {
+  text-align: center;
+  width: 100%;
+}
+
+.home .conteudo .texto {
+  color: white;
+}
+
+.home .conteudo .botao {
+  width: 100px;
+  background-color: #37A7FF;
+  color: white;
+  border-radius: 10em;
+  text-align: center;
+   margin: auto;
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+  padding: .8em 3em;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
