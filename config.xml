@@ -12,6 +12,7 @@
     <preference name="Fullscreen" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="28" />
     <preference name="SplashScreen" value="none" />
     <preference name="FadeSplashScreenDuration" value="0" />
     <platform name="android">
